@@ -1,0 +1,34 @@
+module mux_tb;
+
+	// Inputs
+	reg i0;
+	reg i1;
+	reg s;
+	integer i;
+
+	// Outputs
+	wire o;
+
+	// Instantiate the Unit Under Test (UUT)
+	muxtwo uut (
+		.i0(i0), 
+		.i1(i1), 
+		.s(s), 
+		.o(o)
+	);
+
+	initial begin
+	{s,i1,i0}=0;
+		
+	end
+	initial begin
+	for(i=0;i<8;i=i+1)
+	begin
+	{s,i1,i0}=i;
+	#10;
+	end
+	end
+	
+      
+endmodule
+
